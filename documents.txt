@@ -1,0 +1,18 @@
+Require packages
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+DBConnection template
+   "ConnectionStrings": {
+          "Default": "Server=localhost; Database=<insert db name>; User Id=sa; Password=your_password123"
+      }
+
+Command for migration
+add-migration "Initial migration"
+//for vscode
+dotnet ef migrations add <InitialMigration>
+dotnet ef database update
+
+
+SKill controller --> progressing
