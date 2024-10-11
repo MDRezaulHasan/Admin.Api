@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: docker build
-        run: docker build -t rezaul0168/admin-api:v1.0 Admin.Api/
+        run: docker build -t rezaul0168/admin-api:v0.0 Admin.Api/
 
       - name: docker push
-        run: docker push rezaul0168/admin-api:v1.0
+        run: docker push rezaul0168/admin-api:v0.0
