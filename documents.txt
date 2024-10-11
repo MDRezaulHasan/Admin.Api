@@ -14,5 +14,10 @@ add-migration "Initial migration"
 dotnet ef migrations add <InitialMigration>
 dotnet ef database update
 
+Docker
+docker build -t admin-api:v0 ./
+docker run -p 8080:8080 admin-api:v0
 
 SKill controller --> progressing
+
+
