@@ -2,10 +2,10 @@ name: cicd-pipeline
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  # push:
+  #   branches: [main]
+  # pull_request:
+  #   branches: [main]
 
 jobs:
   ci:
@@ -24,7 +24,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: docker build
-        run: docker build -t rezaul0168/admin-api:v1.0 admin-api/
+        run: docker build -t rezaul0168/admin-api:v1.0 Admin.Api/
 
       - name: docker push
         run: docker push rezaul0168/admin-api:v1.0
