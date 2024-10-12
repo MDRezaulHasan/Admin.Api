@@ -8,6 +8,10 @@ DBConnection template
           "Default": "Server=localhost; Database=<insert db name>; User Id=sa; Password=your_password123"
       }
 
+ACCEPT_EULA=Y
+SA_PASSWORD=Dbpassword2024
+
+
 Command for migration
 add-migration "Initial migration"
 //for vscode

@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  admin-api:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    depends_on:
+      - sqlserver
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DEVELOPMENT
+    networks:
+      - apinetwork
+    restart: on-failure
+  
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      USER: "SA"
+      SA_PASSWORD: "Dbpassword2024"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlvolume:/var/opt/mssql
+    networks:
+      - apinetwork
+networks:
+  apinetwork:
+volumes:
+  sqlvolume:
